@@ -30,7 +30,6 @@ The goals / steps of this project are the following:
 [image10]: ./output_images/search_around_straigth_lines1.png "Search Around Poly"
 [image11]: ./output_images/fit_area_straigth_lines1.png "Fit Area"
 [image12]: ./output_images/fit_area_text_straigth_lines1.png "Fit Area and Text"
-[image12]: ./output_images/fit_area_text_straigth_lines1.png "Fit Area and Text"
 [image13]: ./output_images/undistort_calibration_image.png "undistort calibration image"
 [image14]: ./output_images/calibration_drawcorners.png "Draw Corners on chessboard image"
 [image15]: ./output_images/roi.png "Region of interest"
@@ -56,7 +55,7 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 
 With using camera calibration parameters which i found from the chessboard images,  I applied the distortion correction to one of the test images like this one:
 
-![alt text][image1]
+![alt text][image1 =250x250]
 
 #### 2. Thresholded Binary Image
 In order to extract the lines, some threshold methods are used. These threshold methods are:

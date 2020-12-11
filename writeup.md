@@ -18,13 +18,13 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./output_images/undist_straigth_lines1.png "Undistorted Road Image"
+[image1]: ./output_images/undist_straigth_lines1.png "Undistorted road image"
 [image2]: ./output_images/gradx_straigth_lines1.png "Gradx"
 [image3]: ./output_images/grady_straigth_lines1.png "Grady"
 [image4]: ./output_images/color_binary_straigth_lines1.png "Color threshold"
-[image5]: ./output_images/dir_binary_straigth_lines1.png "Dir Threshold"
-[image6]: ./output_images/mag_binary_straigth_lines1.png "Magnitude Threshold"
-[image7]: ./output_images/combined_straigth_lines1.png "Combined Threshold"
+[image5]: ./output_images/dir_binary_straigth_lines1.png "Dir threshold"
+[image6]: ./output_images/mag_binary_straigth_lines1.png "Magnitude threshold"
+[image7]: ./output_images/combined_straigth_lines1.png "Combined threshold"
 [image8]: ./output_images/combined_warped_straigth_lines1.png "Warped"
 [image9]: ./output_images/fit_poly_straigth_lines1.png "Fit Poly"
 [image10]: ./output_images/search_around_straigth_lines1.png "Search Around Poly"
@@ -55,6 +55,7 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 #### 1. Distortion Correction of Road Image
 
 With using camera calibration parameters which i found from the chessboard images,  I applied the distortion correction to one of the test images like this one:
+
 ![alt text][image1]
 
 #### 2. Thresholded Binary Image

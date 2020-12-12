@@ -56,7 +56,7 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 With using camera calibration parameters which i found from the chessboard images,  I applied the distortion correction to one of the test images like this one:
 
 <p align="center">
-  <img width="600" height="200" src="./images/undist_straigth_lines1.png ">
+  <img width="600" height="400" src="./images/undist_test.png ">
 </p>
 
 

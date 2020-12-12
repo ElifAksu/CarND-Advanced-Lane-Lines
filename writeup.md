@@ -18,22 +18,22 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image21]: ./output_images/undist_straigth_lines1.png "Undistorted"
-[image22]: ./output_images/gradx_straigth_lines1.png "Gradx"
-[image23]: ./output_images/grady_straigth_lines1.png "Grady"
-[image24]: ./output_images/color_binary_straigth_lines1.png "Color threshold"
-[image25]: ./output_images/dir_binary_straigth_lines1.png "Dir threshold"
-[image26]: ./output_images/mag_binary_straigth_lines1.png "Magnitude threshold"
-[image27]: ./output_images/combined_straigth_lines1.png "Combined threshold"
-[image28]: ./output_images/combined_warped_straigth_lines1.png "Warped"
-[image29]: ./output_images/fit_poly_straigth_lines1.png "Fit Poly"
-[image10]: ./output_images/search_around_straigth_lines1.png "Search Around Poly"
-[image11]: ./output_images/fit_area_straigth_lines1.png "Fit Area"
-[image12]: ./output_images/fit_area_text_straigth_lines1.png "Fit Area and Text"
-[image13]: ./output_images/undistort_calibration_image.png "undistort calibration image"
-[image14]: ./output_images/calibration_drawcorners.png "Draw Corners on chessboard image"
-[image15]: ./output_images/roi.png "Region of interest"
-[image16]: ./output_images/hist.png "Histogram"
+[image21]: ./images/undist_straigth_lines1.png "Undistorted"
+[image22]: ./images/gradx_straigth_lines1.png "Gradx"
+[image23]: ./images/grady_straigth_lines1.png "Grady"
+[image24]: ./images/color_binary_straigth_lines1.png "Color threshold"
+[image25]: ./images/dir_binary_straigth_lines1.png "Dir threshold"
+[image26]: ./images/mag_binary_straigth_lines1.png "Magnitude threshold"
+[image27]: ./images/combined_straigth_lines1.png "Combined threshold"
+[image28]: ./images/combined_warped_straigth_lines1.png "Warped"
+[image29]: ./images/fit_poly_straigth_lines1.png "Fit Poly"
+[image10]: ./images/search_around_straigth_lines1.png "Search Around Poly"
+[image11]: ./images/fit_area_straigth_lines1.png "Fit Area"
+[image12]: ./images/fit_area_text_straigth_lines1.png "Fit Area and Text"
+[image13]: ./images/undistort_calibration_image.png "undistort calibration image"
+[image14]: ./images/calibration_drawcorners.png "Draw Corners on chessboard image"
+[image15]: ./images/roi.png "Region of interest"
+[image16]: ./images/hist.png "Histogram"
 [video1]: ./project_video_output.mp4 "Video"
 
 
@@ -55,7 +55,10 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 
 With using camera calibration parameters which i found from the chessboard images,  I applied the distortion correction to one of the test images like this one:
 
-![alt text][image21]
+<p align="center">
+  <img width="600" height="200" src="./images/undist_straigth_lines1.png ">
+</p>
+
 
 #### 2. Thresholded Binary Image
 In order to extract the lines, some threshold methods are used. These threshold methods are:

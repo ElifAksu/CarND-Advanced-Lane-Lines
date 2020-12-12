@@ -122,7 +122,7 @@ I fit a second order polynomial to the real lane data. The coefficients of the p
 
 The second calculation is the shifting of the ego vehicle, that is distance of the center.Ego vehicle position is assumed that the center of the image. The center of the road is calculated from the right- lane lines. The difference between center of the road and the car position gives the shift. The shift value is converted from pixels to meters.  
 
-![alt text][image26]
+
 
 
 #### 6. Draw Detected Area on Original Image
@@ -137,7 +137,7 @@ The warper function calculates inverse of M. I draw polylines left-right lanes a
 
 
 
-Here's a [link to my video result](./project_video.mp4)
+Here's a [link to my video result](./project_video_output.mp4)
 
 ---
 

@@ -18,7 +18,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-
+[image1]: ./output_images/undist_straigth_lines1.png "Undistorted"
 [image2]: ./output_images/gradx_straigth_lines1.png "Gradx"
 [image3]: ./output_images/grady_straigth_lines1.png "Grady"
 [image4]: ./output_images/color_binary_straigth_lines1.png "Color threshold"
@@ -54,7 +54,7 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 #### 1. Distortion Correction of Road Image
 
 With using camera calibration parameters which i found from the chessboard images,  I applied the distortion correction to one of the test images like this one:
-[image1]: ./output_images/undist_straigth_lines1.jpg "Undistorted road image"
+
 ![alt text][image1]
 
 #### 2. Thresholded Binary Image

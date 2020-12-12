@@ -18,15 +18,15 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ../output_images/undist_straigth_lines1.png "Undistorted"
-[image2]: ./output_images/gradx_straigth_lines1.png "Gradx"
-[image3]: ./output_images/grady_straigth_lines1.png "Grady"
-[image4]: ./output_images/color_binary_straigth_lines1.png "Color threshold"
-[image5]: ./output_images/dir_binary_straigth_lines1.png "Dir threshold"
-[image6]: ./output_images/mag_binary_straigth_lines1.png "Magnitude threshold"
-[image7]: ./output_images/combined_straigth_lines1.png "Combined threshold"
-[image8]: ./output_images/combined_warped_straigth_lines1.png "Warped"
-[image9]: ./output_images/fit_poly_straigth_lines1.png "Fit Poly"
+[image21]: ./output_images/undist_straigth_lines1.png "Undistorted"
+[image22]: ./output_images/gradx_straigth_lines1.png "Gradx"
+[image23]: ./output_images/grady_straigth_lines1.png "Grady"
+[image24]: ./output_images/color_binary_straigth_lines1.png "Color threshold"
+[image25]: ./output_images/dir_binary_straigth_lines1.png "Dir threshold"
+[image26]: ./output_images/mag_binary_straigth_lines1.png "Magnitude threshold"
+[image27]: ./output_images/combined_straigth_lines1.png "Combined threshold"
+[image28]: ./output_images/combined_warped_straigth_lines1.png "Warped"
+[image29]: ./output_images/fit_poly_straigth_lines1.png "Fit Poly"
 [image10]: ./output_images/search_around_straigth_lines1.png "Search Around Poly"
 [image11]: ./output_images/fit_area_straigth_lines1.png "Fit Area"
 [image12]: ./output_images/fit_area_text_straigth_lines1.png "Fit Area and Text"
@@ -55,7 +55,7 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 
 With using camera calibration parameters which i found from the chessboard images,  I applied the distortion correction to one of the test images like this one:
 
-![alt text][image1]
+![alt text][image21]
 
 #### 2. Thresholded Binary Image
 In order to extract the lines, some threshold methods are used. These threshold methods are:
@@ -66,7 +66,7 @@ In order to extract the lines, some threshold methods are used. These threshold 
 	5. Color Threshold 
 I used a combination of these thresholds to generate a binary image.  Here's an example of my output for this step. 
 
-![alt text][image7]
+![alt text][image27]
 
 #### 3. Warp Image 
 
@@ -85,7 +85,7 @@ This resulted source and destination points:
 
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
-![alt text][image8]
+![alt text][image28]
 
 #### 4. Fit polynomial to lane lines
 
@@ -101,7 +101,7 @@ I did this in lines # through # in my code in `my_other_file.py`
 
 I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
 
-![alt text][image6]
+![alt text][image26]
 
 ---
 

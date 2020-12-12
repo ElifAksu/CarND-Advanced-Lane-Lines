@@ -56,7 +56,7 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 With using camera calibration parameters which i found from the chessboard images,  I applied the distortion correction to one of the test images like this one:
 
 <p align="center">
-  <img width="600" height="400" src="./images/undist_test.png ">
+  <img width="800" height="400" src="./images/undist_test.png ">
 </p>
 
 
@@ -69,7 +69,10 @@ In order to extract the lines, some threshold methods are used. These threshold 
 	5. Color Threshold 
 I used a combination of these thresholds to generate a binary image.  Here's an example of my output for this step. 
 
-![alt text][image27]
+<p align="center">
+  <img width="800" height="400" src="./images/combined_test.png ">
+</p>
+
 
 #### 3. Warp Image 
 
@@ -88,29 +91,51 @@ This resulted source and destination points:
 
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
-![alt text][image28]
+<p align="center">
+  <img width="800" height="400" src="./images/combined_warped_test.png ">
+</p>
 
+After calibration, thresholding and perspective transform to the road image, lane lines are seen clearly.
 #### 4. Fit polynomial to lane lines
 
-Histogram of the warped image is computed. When the histogram is investigated, it can be seen that the peaks are directly related to the lane pixels. 
+Histogram of the warped image is plotted. When the histogram is investigated, it can be seen that the peaks are directly related to the lane pixels. 
 
 ![alt text][image16]
 
-#### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
+Two highest peaks from the histogram are the starting points to search lane lines. Sliding windows are used to determine the lane pixels. A polynomial is fitted with `polyfit()` function on found  pixels. 
 
-I did this in lines # through # in my code in `my_other_file.py`
+<p align="center">
+  <img width="800" height="400" src="./images/fit_poly_test.png ">
+</p>
 
-#### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
+ 
+#### 5. Search from Prior
 
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
+The lane lines do not move a lot for each frame so, searching again and again with sliding windows is not necessary. In the next frame, the prior knowledge about the lines can be used. The margin is determined to find the search area. Lane pixels are found with these method rather than sliding windows. The example search area when the previos coefficients are used can be seen in the following image: 
+
+<p align="center">
+  <img width="800" height="400" src="./images/search_around_test.png ">
+</p>
+
+#### 6. Curvature of the Lane Lines
+I fit a second order polynomial to the real lane data. The coefficients of the polynomial are provided from `polyfit()` function. The equation for radius of curvature is used to find left-right lane curvature radius. The avarage value of these two radius of curvatures gives the road curvature. 
+
+The second calculation is the shifting of the ego vehicle, that is distance of the center.Ego vehicle position is assumed that the center of the image. The center of the road is calculated from the right- lane lines. The difference between center of the road and the car position gives the shift. The shift value is converted from pixels to meters.  
 
 ![alt text][image26]
 
+
+#### 6. Draw Detected Area on Original Image
+The warper function calculates inverse of M. I draw polylines left-right lanes and fill the poly. After I get the result from warped image, I applied perspective transform again with the `inv_M` to get original image.  I put the text which shows the road curvature and shift values on world space. 
+
+<p align="center">
+  <img width="800" height="400" src="./images/fit_area_text_test.png ">
+</p>
 ---
 
 ### Pipeline (video)
 
-#### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
+
 
 Here's a [link to my video result](./project_video.mp4)
 
@@ -118,6 +143,7 @@ Here's a [link to my video result](./project_video.mp4)
 
 ### Discussion
 
-#### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
-
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+Firstly, I selected source (`src`) and destination (`dst`) points with trials. To cover all images these points can be optimized. 
+Also, There are lots of parameters which are mostly in the thresholding part. These parameters should also calibrated well. The threshold values need to tested with different road images to find best. 
+As an improvement on a code, if there is no lane in the image frame the tracking algorithm can be implemented to do prediction for a while with using previous lane lines.   
+When I tested my code with challenge video, I realized that the lines cannot found correctly on each frame. The reason of this, the changing conditions such as brightness affect my lane finding code.  
